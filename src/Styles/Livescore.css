@@ -1,0 +1,31 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  background-color: rgb(195, 128, 240);
+
+  padding: 10px;
+  height: 300px;
+  outline: none;
+  border: none;
+  box-shadow: rgba(134, 134, 148, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.card-body p{
+  margin-top: 10px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.card-body{
+  margin-top: 30px;
+  border: 2px solid rgb(218, 214, 214);
+  border-radius: 5px;
+}
+

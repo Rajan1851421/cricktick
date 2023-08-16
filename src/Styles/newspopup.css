@@ -1,0 +1,22 @@
+#table  th {
+    background-color: #30E7ED !important;
+    border-radius: 1px !important;  
+}
+#table td{
+    border-radius: 1px !important; 
+
+}
+#table tr:hover{
+    background-color: #400358 !important;
+}
+.team-buttons button{
+    border-radius: 25px!important;
+    background-color: hsl(283, 95%, 26%);
+    border: none;
+    padding: 10px 15px ;
+}
+.team-buttons button:hover{
+    border-radius: 25px!important;
+    background-color: #400358;
+    outline: none;
+}

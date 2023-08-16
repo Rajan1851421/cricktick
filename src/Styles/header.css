@@ -1,0 +1,110 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap"); */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+
+.header1 {
+	border:1px solid !important;
+	height:130px !important;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.header2 {
+	
+	position: sticky;
+	top: 130px;
+	z-index: 100;
+}
+
+body {
+	background-color: #E3E6E3 !important;
+}
+
+.logo {
+	align-items: center;
+	height: 80px;
+	margin-left: 50px;
+	background-color: transparent;
+	display: flex;
+	padding: 5px 0px;
+	border: 1px solid rgb(211, 200, 200);
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+	padding: 0px 60px 0px 0px;
+}
+
+.nav {
+	margin-left: 40px;
+}
+
+
+.nav_link {
+	text-decoration: none !important;
+	color: rgb(31, 28, 28);
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	margin-left: 20px;
+	padding: 5px;
+}
+
+
+
+.nav_link:hover {
+	color: rgb(218, 202, 218);
+	border-bottom: 0px solid rgb(10, 3, 10);
+	text-decoration: none;
+	border-radius: none;
+	transition: 0.5s ease-in;
+	
+}
+.navbar2{
+	height: 48px!important;
+	margin-left: -15px;
+	margin-right: auto;
+	width: 100vw;
+}
+.navbar2 Link{
+	color:#E3E6E3;
+	border: 1px solid;
+}
+
+
+
+#header1{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 70px !important;
+	background-color:#321c60;
+	
+}
+
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+	
+	
+	.Sign_Btn{
+		display: none!important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

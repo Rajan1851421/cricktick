@@ -1,0 +1,21 @@
+th{
+    background-color: #770677 !important;
+    border-radius: 10px;
+    color: #f7f3f3 !important;
+    padding: 10px 0px;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+
+
+}
+td{
+    background-color: #c089c0 !important;
+    border-radius: 10px;
+    color: rgb(32, 29, 29);
+    padding: 10px 0px;
+    text-align: center;
+}
+table,tr,td{
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,190 @@
+.registration_form_main_container {
+    background-color: white;
+    height: 95vh;
+    border: 1px solid lightgray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* border: 1px solid white; */
+    height: 500px;
+    width: 40%;
+    padding: 0 30px;
+    padding-bottom: 25px;
+
+    background: rgba(255, 255, 255, 0.096);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.048);
+}
+
+.form_heading {
+    font-size: 30px;
+    color: #03a84e;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.passBox {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.023);
+    height: 38px;
+    /* border: 1px solid white; */
+    margin: 20px 0;
+}
+
+.form_control {
+    height: 38px;
+    width: 95%;
+    padding: 5px 15px;
+    margin: 20px 0;
+    letter-spacing: 1px;
+
+    border: none;
+    background: rgba(255, 255, 255, 0.023);
+    /* background: rgba(255, 255, 255, 0.023); */
+    color: #03a84e;
+
+    /* border: 1px solid white; */
+}
+
+.form_control:focus {
+    outline: 1px solid #03a84e;
+}
+
+#form_control {
+    background-color: transparent;
+}
+
+.eyeBtn {
+    color: #03a84e;
+    margin-left: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.registrationBtn {
+    width: 150px;
+    height: 45px;
+    margin: 0 auto;
+    letter-spacing: 0.75;
+    border-radius: 50px;
+    border-style: none;
+    background-color: #03a84e;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.registrationBtn:hover {
+    color: rgb(0, 0, 0);
+    letter-spacing: 1.5px;
+    transition: 0.75s;
+}
+
+.text{
+    text-align: center;
+    margin-top: 15px;
+    color: rgb(118, 123, 128);
+}
+
+.link{
+    color: #03a84e;
+}
+
+.link:hover{
+    text-decoration: none;
+    color: #03a84db0;
+}
+
+/* jhfdKC2222222222222222222************************* */
+/* Import Google font - Poppins */
+
+body{
+  min-height: 100vh;
+  width: 100%;
+  background: #009579;
+}
+
+.container .registration{
+  display: none;
+}
+#check:checked ~ .registration{
+  display: block;
+}
+#check:checked ~ .login{
+  display: none;
+}
+#check{
+  display: none;
+}
+.container .form{
+  padding: 2rem;
+}
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 60px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background: #009579;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background: #006653;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+
+.Register_container{
+  border: 1px solid;
+}

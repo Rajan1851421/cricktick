@@ -1,0 +1,144 @@
+.dark-theme {
+    --mian-heading: #4B059B  !important;
+    --para-color: rgb(252, 248, 248) !important;
+    --btn-text-clr: rgb(209, 206, 206) !important;
+    --bg-color: rgb(46, 45, 45) !important;
+    --nav-color:rgb(32, 32, 32)!important;
+   --p-color:rgb(255, 255, 255);
+   --b-color:rgb(29, 28, 28);
+   
+
+}
+
+.light-theme {
+    --p-color:rgb(32, 32, 32);
+    --b-color:rgb(255, 255, 255);
+    
+    --mian-heading: rgb(216, 201, 215) !important;
+    --para-color: rgb(5, 5, 5) !important;
+    --btn-text-clr: rgb(20, 20, 20) !important;
+    --bg-color: white !important;
+    --nav-color:rgb(204, 204, 217),#4B059B ;
+    
+}
+#icon{
+    color:var(--p-color);
+}
+
+
+ .header1 #container-fluid{
+    background-color:var(--nav-color);
+}
+
+.header2 {
+    background-color:var(--b-color);
+}
+.header2 nav .nav_link{
+    color:var(--p-color);
+}
+#languageHindi button Link{
+    color:var(--p-color);
+    background-color:var(--b-color)
+}
+
+/* Home component */
+
+.list-group{
+    color:var(--p-color);
+    background-color:var(--b-color)
+}
+.card-text{
+    color:var(--p-color);
+
+}
+.date {
+   color:var(--p-color);
+}
+.title{
+    color:var(--p-color);
+}
+.details{
+    color:var(--p-color);
+}
+.news-container{
+    background-color:var(--b-color)
+
+}
+#App-container{
+    background-color:var(--b-color)
+}
+#card{
+    background-color:var(--b-color)
+}
+#scoreDetail{
+    color:var(--p-color);
+}
+#UpcomingEvents{
+    background-color:var(--b-color)
+}
+#h1{
+    color:var(--p-color);
+}
+#ranking-container{
+    background-color:var(--b-color)
+}
+#full-rank-container{
+    background-color:var(--b-color)
+}
+#btn_container{
+    background-color:var(--b-color)
+}
+.Full-Width-About{
+    background-color:var(--b-color)
+}
+#about-section{
+    background-color:var(--b-color)
+}
+#text-About{
+    background-color:var(--b-color);
+    color:var(--p-color);
+}
+#Team-rank-full-width{
+    background-color:var(--b-color);
+}
+#tweet-full-width{
+    background-color:var(--b-color);
+}
+#exampleFormControlTextarea1{
+    background-color:var(--b-color);
+}
+#modal{
+    background-color:var(--b-color);
+    color:var(--p-color);
+}
+#modal closeButton{
+    color:var(--p-color);
+}
+#Score-wrap{
+    background-color:var(--b-color);
+    
+}
+#card-wrapper{
+    background-color:var(--b-color);
+}
+#AdminEmp{
+    background-color:var(--b-color);
+}
+#adminLogin{
+    background-color:var(--b-color);
+}
+#AdminEmpBtn{
+    background-color:var(--b-color);
+}
+#manulaNews{
+    background-color:var(--b-color);
+    color:var(--p-color);
+}
+#manual-twiter{
+    background-color:var(--b-color);
+    color:var(--p-color);
+}
+#exampleFormControlTextarea1{
+    color:var(--p-color);
+}
+
