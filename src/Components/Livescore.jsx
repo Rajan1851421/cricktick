@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PageNotFound from './PageNotFound'
 
 function Livescore() {
   const [scoreData, setScoreData] = useState(null);
@@ -20,7 +21,7 @@ function Livescore() {
 
   const handleLivescore = () => {
     axios
-      .get('https://backend-ekms.onrender.com/cricinfo/Live_Interntonal/')
+      .get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/Live_Interntonal/')
       .then(response => {
         //console.log(response.data);
         setScoreData(response.data);
@@ -44,7 +45,7 @@ function Livescore() {
         <Link to='/scorecard' className="text-decoration-none">
           <div className="card h-100 shadow-lg rounded" key={index}>
             <div className="card-body d-flex flex-column" id="AdminEmp">
-              <h6 className="card-title" id='h1'>{score.live.overview[index]}</h6> <hr />
+              <h6 className="card-title" id='h1'>{score.live.overview[index]}</h6> <span className="text-muted">{score.live.date[index]}</span> <hr />
               <div className='d-flex justify-content-between align-items-center '>
                 {/* <span><img src={img1} className="img-fluid img-thumbnail" alt="Flag" /></span> */}
                 <b><span className='text-right' id='h1'  style={{color:'#321c60'}} >{country1}</span></b>
@@ -82,7 +83,7 @@ function Livescore() {
             </div>
           ) : (
             // Show a message when no data is present
-            <center><h5 id='h1'>No data available.</h5></center>
+            <center><h5 id='h1'> <PageNotFound/> </h5></center>
           )
         )}
       </div>

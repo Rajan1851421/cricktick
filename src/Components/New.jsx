@@ -1,104 +1,203 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function PostForm() {
-  const [formData, setFormData] = useState({
-    upload_photo: '',
-    upload_video: '',
-    title: '',
-    description: '',
-    date: '',
-  });
+function Scorecard() {
+  const [scorecards, setScorecards] = useState([]);
+  const [selectedScorecard, setSelectedScorecard] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [index, setIndex] = useState(0)
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  useEffect(() => {
+    setIsLoading(true)
+    axios
+      .get('http://127.0.0.1:8000/cricinfo/scorecard/')
+      .then(response => {
+        //console.log(response.data)
+        setScorecards(response.data);
+        setIsLoading(false) // Assuming the response contains an array of scorecards
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleButtonClick = index => {
+    setSelectedScorecard(scorecards[index]);
 
-    const formDataToSend = new FormData();
-    formDataToSend.append('upload_photo', formData.upload_photo);
-    formDataToSend.append('upload_video', formData.upload_video);
-    formDataToSend.append('title', formData.title);
-    formDataToSend.append('description', formData.description);
-    formDataToSend.append('date', formData.date);
-
-    try {
-      const response = await axios.post(
-        'https://backend-ekms.onrender.com/manual_news/get_post_social/',
-        formDataToSend,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
-
-      // Handle success or display a message to the user
-      //console.log('Post successful:', response.data);
-    } catch (error) {
-      // Handle error or display an error message to the user
-      console.error('AxiosError:', error);
-    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className='my-5'>
-      <div>
-        <label htmlFor="upload_photo">Upload Photo</label>
-        <input
-          type="file"
-          id="upload_photo"
-          name="upload_photo"
-          onChange={handleInputChange}
-        />
+    <div className='container-fluid py-3' id='AdminEmp'>
+      <div className='container my-5 '>
+        {isLoading ? (
+          <p className='text-center'>Loading...</p>
+        ) : (
+          scorecards.map((scorecard, index) => (
+            <>
+              {/* {console.log("Raj", scorecard)} */}
+              <button key={index} className="btn btn-primary mx-2 mt-2" onClick={() => handleButtonClick(index)} disabled={scorecard.length < 1} >
+                View Scorecard
+              </button>
+            </>
+          )
+          )
+        )}
       </div>
-      <div>
-        <label htmlFor="upload_video">Upload Video</label>
-        <input
-          type="file"
-          id="upload_video"
-          name="upload_video"
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={formData.title}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          value={formData.description}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="date">Date</label>
-        <input
-          type="date"
-          id="date"
-          name="date"
-          value={formData.date}
-          onChange={handleInputChange}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+      {selectedScorecard && (
+        <div className='container'>
+
+          <div className="1stInnings border p-3 rounded my-3">
+
+            <h3 id='h1'>1st Innings</h3>
+            {Object.keys(selectedScorecard[0][0]).slice(0, 1).map((key, index) => (
+              <h3 id='h1' key={index} className='px-3'> {key.replace('Batters', '')}</h3>
+            ))}
+            <div className="table-responsive">
+              <table className='table table-sm w-100'>
+
+                <thead >
+                  <tr>
+                    <th className='py-1 pl-1'>Batter</th>
+                    <th className='py-1 pl-1'>R</th>
+                    <th className='py-1 pl-1'>B</th>
+                    <th className='py-1 pl-1'>4s</th>
+                    <th className='py-1 pl-1'>6s</th>
+                    <th className='py-1 pl-1'>SR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Render the table rows based on the selectedScorecard */}
+
+                  {selectedScorecard[0].map((batter, batterIndex) => (
+                    <tr key={batterIndex}>
+                      {/* <td className="py-1">{index}</td>              */}
+                      {/* <td className="py-1">{batter[(Object.keys(scorecards[index][0][0])[0])]}</td> */}
+                      <td className="py-1">{batter[(Object.keys(batter)[0])]}</td>
+                      <td className="py-1">{batter['R']}</td>
+                      <td className="py-1">{batter['B']}</td>
+                      <td className="py-1">{batter['4s']}</td>
+                      <td className="py-1">{batter['6s']}</td>
+                      <td className="py-1">{batter['SR']}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className=' fall-of-wickets my-2'>
+              <p id='h1'><strong>Fall of Wickets: &nbsp;</strong>{selectedScorecard[1][0]['Fall of Wickets']}</p>
+            </div>
+            <h3 id='h1'>Bowling: &nbsp;
+              {Object.keys(selectedScorecard[2][0]).slice(0, 1).map((key, index) => (
+                <span id='h1' key={index} className='px-3'>{key.replace('Bowlers', '')}</span>
+              ))}
+            </h3>
+            <div className="table-responsive">
+              <table className='table table-sm w-100'>
+                <thead>
+                  <tr>
+                    <th className='px-3'>Bowler</th>
+                    <th className='px-3'>O</th>
+                    <th className='px-3'>M</th>
+                    <th className='px-3'>R</th>
+                    <th className='px-3'>W</th>
+                    <th className='px-3'>Econ</th>
+                    <th className='px-3'>Dots</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectedScorecard[2].map((bowler, bowlerIndex) => (
+                    <tr key={bowlerIndex}>
+                      <td className="py-1">{bowler[(Object.keys(bowler)[0])]}</td>
+                      <td className="py-1">{bowler['O']}</td>
+                      <td className="py-1">{bowler['M']}</td>
+                      <td className="py-1">{bowler['R']}</td>
+                      <td className="py-1">{bowler['W']}</td>
+                      <td className="py-1">{bowler['Econ']}</td>
+                      <td className="py-1">{bowler['Dots']}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="2ndInnings border p-3 rounded" id='AdminEmp'>
+            <h3 id='h1'>2nd Innings</h3>
+            {Object.keys(selectedScorecard[3][0]).slice(0, 1).map((key, index) => (
+              <h3 id='h1' key={index} className='px-3'>{key.replace('Batters', '')}</h3>
+            ))}
+            <div className="table-responsive">
+              <table className="table table-sm w-100" id='h1'>
+                <thead >
+                  <tr>
+                    <th className='px-3'>Batter</th>
+                    <th className='px-3'>R</th>
+                    <th className='px-3'>B</th>
+                    <th className='px-3'>4s</th>
+                    <th className='px-3'>6s</th>
+                    <th className='px-3'>SR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Render the table rows based on the selectedScorecard */}
+                  {selectedScorecard[3].map((batter, batterIndex) => (
+                    <tr key={batterIndex}>
+                      <td className="py-1">{batter[(Object.keys(batter)[0])]}</td>
+                      <td className="py-1">{batter['R']}</td>
+                      <td className="py-1">{batter['B']}</td>
+                      <td className="py-1">{batter['4s']}</td>
+                      <td className="py-1">{batter['6s']}</td>
+                      <td className="py-1">{batter['SR']}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className=' fall-of-wickets my-2'>
+              <p id='h1'><strong>Fall of Wickets: &nbsp;</strong>{selectedScorecard[4][0]['Fall of Wickets']}</p>
+            </div>
+            <h3 id='h1'>Bowling: &nbsp;
+              {Object.keys(selectedScorecard[5][0]).slice(0, 1).map((key, index) => (
+                <span id='h1' key={index} className='px-3'>{key.replace('Bowlers', '')}</span>
+              ))}
+            </h3>
+            <div className="table-responsive">
+              <table className='w-100'>
+                <thead>
+                  <tr>
+                    <th className='px-3'>Bowler</th>
+                    <th className='px-3'>O</th>
+                    <th className='px-3'>M</th>
+                    <th className='px-3'>R</th>
+                    <th className='px-3'>W</th>
+                    <th className='px-3'>Econ</th>
+                    <th className='px-3'>Dots</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectedScorecard[5].map((bowler, bowlerIndex) => (
+                    <tr key={bowlerIndex}>
+                      <td className="py-1">{bowler[(Object.keys(bowler)[0])]}</td>
+                      <td className="py-1">{bowler['O']}</td>
+                      <td className="py-1">{bowler['M']}</td>
+                      <td className="py-1">{bowler['R']}</td>
+                      <td className="py-1">{bowler['W']}</td>
+                      <td className="py-1">{bowler['Econ']}</td>
+                      <td className="py-1">{bowler['Dots']}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+        </div>
+      )}
+    </div>
   );
 }
 
-export default PostForm;
+export default Scorecard;

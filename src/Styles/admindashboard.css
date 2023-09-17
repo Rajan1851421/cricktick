@@ -1,0 +1,17 @@
+@media (min-width: 320px) and (max-width: 767px) {
+    .btn-admin-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      
+    }
+    .twitter-btn{
+        margin-top: 10px;
+    }
+    .twitter-border {
+        width: 95%;
+    }
+    .twitter-form{
+        padding: 5px;
+    }
+}

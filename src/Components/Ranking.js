@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/Ranking.css";
 import axios from 'axios';
+import PageNotFound from './PageNotFound'
 
 function App() {
 
@@ -20,9 +21,9 @@ function App() {
         window.scrollTo(0, 0);
         handleClick(
             [
-                "https://backend-ekms.onrender.com/cricinfo/BatMenTestRanking/",
-                "https://backend-ekms.onrender.com/cricinfo/BatMenODIRanking/",
-                "https://backend-ekms.onrender.com/cricinfo/BatMenT20Ranking/",
+                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenTestRanking/",
+                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenODIRanking/",
+                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenT20Ranking/",
             ],
             "batsman"
         );
@@ -56,82 +57,87 @@ function App() {
 
     return (
         <div className="container-fluid my-3" id="btn_container">
-            <div className="btn_container container d-inline-block">
-                <button
-                    className={`btn btn-info rounded-pill ${currentCategory === "batsman" ? "active" : ""}`}
-                    onClick={() =>
-                        handleClick(
-                            [
-                                "https://backend-ekms.onrender.com/cricinfo/BatMenTestRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/BatMenODIRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/BatMenT20Ranking/",
-                            ],
-                            "batsman"
-                        )
-                    }
-                >
-                    Batsman
-                </button>
-                <button
-                    className="btn btn-info rounded-pill"
-                    onClick={() =>
-                        handleClick(
-                            [
-                                "https://backend-ekms.onrender.com/cricinfo/bowlerMenTestRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/bowlerMenODIRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/bowlerMenT20Ranking/",
-                            ],
-                            "bowlers"
-                        )
-                    }
-                >
-                    Bowlers
-                </button>
-                <button
-                    className="btn btn-info rounded-pill"
-                    onClick={() =>
-                        handleClick(
-                            [
-                                "https://backend-ekms.onrender.com/cricinfo/AllrounderMenTestRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/AllrounderMenODIRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/AllrounderMenT20Ranking/",
-                            ],
-                            "allRounders"
-                        )
-                    }
-                >
-                    All-rounders
-                </button>
-                <button
-                    className="btn btn-info rounded-pill"
-                    onClick={() =>
-                        handleClick(
-                            [
-                                "https://backend-ekms.onrender.com/cricinfo/BatWoMenODIRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/BowlerWoMenODIRanking/",
-                                "https://backend-ekms.onrender.com/cricinfo/AllrounderWoMenODIRanking/",
-                            ],
-                            "womenODI"
-                        )
-                    }
-                >
-                    Women-ODI
-                </button>
-                <button
-                    className="btn btn-info rounded-pill"
-                    onClick={() =>
-                        handleClick(
-                            [
-                                "https://backend-ekms.onrender.com/cricinfo/WomenT20Bowler/",
-                                "https://backend-ekms.onrender.com/cricinfo/WomenT20Bat/",
-                                "https://backend-ekms.onrender.com/cricinfo/WomenT20Allrounder/",
-                            ],
-                            "womenT20"
-                        )
-                    }
-                >
-                    Women-T20
-                </button>
+            <div className="row">
+                <div className="container btn_container col-md-12 mt-5">
+                    <button
+                        className={`btn btn-info rounded-pill ${currentCategory === "batsman" ? "active" : ""}`}
+                        onClick={() =>
+                            handleClick(
+                                [
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenTestRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenODIRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenT20Ranking/",
+                                ],
+                                "batsman"
+                            )
+                        }
+                    >
+                        Batsman
+                    </button>
+                    <button
+                        className="btn btn-info rounded-pill"
+                        onClick={() =>
+                            handleClick(
+                                [
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenTestRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenODIRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenT20Ranking/",
+                                ],
+                                "bowlers"
+                            )
+                        }
+                    >
+                        Bowlers
+                    </button>
+                    <button
+                        className="btn btn-info rounded-pill"
+                        onClick={() =>
+                            handleClick(
+                                [
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenTestRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenODIRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenT20Ranking/",
+                                ],
+                                "allRounders"
+                            )
+                        }
+                    >
+                        All-rounders
+                    </button>
+                    <button
+                        className="btn btn-info rounded-pill"
+                        onClick={() =>
+                            handleClick(
+                                [
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatWoMenODIRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BowlerWoMenODIRanking/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderWoMenODIRanking/",
+                                ],
+                                "womenODI"
+                            )
+                        }
+                    >
+                        Women-ODI
+                    </button>
+                    <button
+                        className="btn btn-info rounded-pill"
+                        onClick={() =>
+                            handleClick(
+                                [
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Bowler/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Bat/",
+                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Allrounder/",
+                                ],
+                                "womenT20"
+                            )
+                        }
+                    >
+                        Women-T20
+                    </button>
+                </div>
+            </div>
+            <div className="btn_container container ">
+
             </div>
             {loading && <center><p className='mt-2' id='h1'>Loading data...</p></center>}
 
@@ -156,7 +162,7 @@ function App() {
                                         <h3 id='h1'><img src="https://img.freepik.com/free-vector/girl-about-hit-baseball-isolated_1308-37767.jpg?size=626&ext=jpg&ga=GA1.1.180599784.1691488875&semt=ais" style={{ width: '60px' }} /> {headings[currentCategory][dataSetIndex]}</h3>
                                     )}
 
-                                     {currentCategory === "womenT20" && (
+                                    {currentCategory === "womenT20" && (
                                         <h3 id='h1'><img src="https://img.freepik.com/free-vector/cricket-fever-freehand-sketch-graphic-design-vector-illustration_460848-10737.jpg?size=626&ext=jpg&ga=GA1.2.180599784.1691488875&semt=sph" style={{ width: '60px' }} /> {headings[currentCategory][dataSetIndex]}</h3>
                                     )}
                                     {/* Add similar conditions for other categories */}
@@ -185,7 +191,7 @@ function App() {
                                             ))
                                         ) : (
                                             <tr>
-                                                <td colSpan="4">No data available</td>
+                                                <td colSpan="4"><PageNotFound/></td>
                                             </tr>
                                         )}
                                     </tbody>

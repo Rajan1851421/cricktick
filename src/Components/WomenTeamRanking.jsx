@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import "../Styles/Ranking.css";
 
 function WomenTeamRanking() {
   const [team1HeaderName, setTeam1HeaderName] = useState('');
@@ -17,8 +18,8 @@ function WomenTeamRanking() {
   const handleTeam = () => {
     setIsLoading(true);
 
-    const t1 = axios.get('https://backend-ekms.onrender.com/cricinfo/WomenT20Teams/');
-    const t2 = axios.get('https://backend-ekms.onrender.com/cricinfo/WomenODITeams/');
+    const t1 = axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Teams/');
+    const t2 = axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenODITeams/');
    
     axios.all([t1, t2])
       .then(axios.spread((t11, t22) => {
@@ -43,7 +44,7 @@ function WomenTeamRanking() {
         console.error(error);
 
         setIsLoading(false);
-        setError(' Please try again later after Some times !!!.');
+        setError('No data');
       });
   };
 
@@ -67,11 +68,11 @@ function WomenTeamRanking() {
                 </center>
               ) : error ? (
                 <center>
-                  <h2 className="text-center text-danger">{error}</h2>
+                  <h2 className="text-center text-danger border">{error}</h2>
                 </center>
               ) : (
                 <div className='container'>
-                  <div className='table-responsive'>
+                  <div className='table-responsive tableFixHead'>
                     <table className='table  table-hover'>
                       <thead>
                         {team1.length > 0 && (
@@ -115,7 +116,7 @@ function WomenTeamRanking() {
                 </center>
               ) : (
                 <div className='container'>
-                  <div className="table-responsive">
+                  <div className="table-responsive tableFixHead">
                     <table className='table  table-hover'>
                       <thead>
                         {team2.length > 0 && (

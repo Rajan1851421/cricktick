@@ -21,4 +21,17 @@
     #navbarDropdown{
         color:#ffffff !important;  
     }
+    .dp-menu{
+        border: none !important;
+    }
+    .dp-item{
+        color: #fff!important;
+    }
+    .team-rank-btn-container{
+        margin-top: 10px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+   
 }

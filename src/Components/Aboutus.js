@@ -39,7 +39,7 @@ function Aboutus() {
           <div className="row">
             <div className="col-md-12">
               <h2 className='my-5 text-center' >Who we are... <img src="https://img.freepik.com/free-vector/human-hand-writing-isolated_1308-113867.jpg?size=626&ext=jpg&ga=GA1.2.180599784.1691488875&semt=ais" alt="" style={{height:'40px'}} /> </h2> <hr />
-              <p className='text-center fw-500 fs-6 mt-2 mb-2 py-3 ' id='text-About' style={{ backgroundColor: 'transparent' }}>
+              <p className='text-left fw-500 fs-5 mt-2 mb-2 py-3  ' id='text-About' style={{ backgroundColor: 'transparent' }}>
                 Welcome to our website! We are your ultimate destination for everything related to cricket news, insights, stats, live scores, and much more. <br /> As passionate cricket enthusiasts, we strive to provide you with the most comprehensive coverage of the sport, keeping you updated and engaged with the latest happenings in the cricketing world.
                 Our team of dedicated writers and analysts works tirelessly to bring you the most accurate and up-to-date information. Whether you're a fan of international cricket, domestic leagues, or even the thriving T20 franchise tournaments, we've got you covered. <br /> We understand the excitement and anticipation that comes with following the sport, and we aim to enhance your cricketing experience by delivering high-quality content that keeps you informed and entertained.
                 Stay tuned to our website for the latest news articles, in-depth analysis, match previews, player profiles, expert opinions, and much more. We take pride in our ability to capture the essence of the game and present it to you in an engaging and informative manner. <br />

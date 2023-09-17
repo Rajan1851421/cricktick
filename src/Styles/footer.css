@@ -1,0 +1,33 @@
+@media (min-width: 320px) and (max-width: 767px) {
+    .quick-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .list-unstyled {
+        background-color: transparent !important;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-Link {
+        margin-left: 10px!important;
+        background-color: transparent!important;
+    }
+    .list-unstyled ul li Link{
+        margin-left: 10px!important;
+    }
+    .Footer-Brand{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+}

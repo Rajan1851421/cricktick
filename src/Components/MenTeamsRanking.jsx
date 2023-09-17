@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../Styles/navbar2.css';
 
 const CricketRankings = () => {
   const [tableData, setTableData] = useState([]);
@@ -15,7 +16,7 @@ const CricketRankings = () => {
   const handleButtonClick1 = () => {
     setLoading(true); // Show loading message
     axios
-      .get(`https://backend-ekms.onrender.com/cricinfo/MenTeamsTestRanking/`)
+      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenTeamsTestRanking/`)
       .then(response => {
         //console.log(response)
         if (response.status == 200) {
@@ -40,7 +41,7 @@ const CricketRankings = () => {
   const handleButtonClick2 = () => {
     setLoading(true);
     axios
-      .get(`https://backend-ekms.onrender.com/cricinfo/MenODITeamsRanking/`)
+      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenODITeamsRanking/`)
       .then(response => {
         if (response.status == 200)  {
           setTableData(JSON.parse(response.data));
@@ -62,7 +63,7 @@ const CricketRankings = () => {
   const handleButtonClick3 = () => {
     setLoading(true);
     axios
-      .get(`https://backend-ekms.onrender.com/cricinfo/MenT20TeamsRanking/`)
+      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenT20TeamsRanking/`)
       .then(response => {
         if (response.status == 200)  {
           setTableData(JSON.parse(response.data));
@@ -84,31 +85,31 @@ const CricketRankings = () => {
     <>
       <div className='container-fluid' id='AdminEmp'>
         <div className='container mt-5' id='AdminEmp'>
-          <div>
+          <div className='my-5 team-rank-btn-container'>
             <button
               onClick={handleButtonClick1}
-              className='btn btn-light mx-3 my-5'
+              className='btn btn-light mx-3'
               style={{ backgroundColor: '#321c60', color: 'white' }}
             >
-              Men's Test Rankings
+             &#9759;  Men's Test Rankings
             </button>
             <button
               onClick={handleButtonClick2}
-              className='btn btn-light mx-3 my-5'
+              className='btn btn-light mx-3'
               style={{ backgroundColor: '#321c60', color: 'white' }}
             >
-              Men's ODI Rankings
+              &#9759;Men's ODI Rankings
             </button>
             <button
               onClick={handleButtonClick3}
-              className='btn btn-light mx-3 my-5'
+              className='btn btn-light mx-3'
               style={{ backgroundColor: '#321c60', color: 'white' }}
             >
-              Men's T20 Rankings
+              &#9759;Men's T20 Rankings
             </button>
 
             {/* Show loading message */}
-            {loading && <p>Loading Data...</p>}
+            {loading && <p className='text-center'>Loading Data...</p>}
 
             {/* Show no data message */}
             {!loading && selectedTable !== null && tableData.length === 0 && (

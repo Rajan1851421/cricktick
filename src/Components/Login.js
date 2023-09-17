@@ -38,7 +38,7 @@ const AdminLogin = () => {
     };
     setLoading(true); // Start loading indication
 
-    axios.post('https://backend-ekms.onrender.com/role/login/', loginData)
+    axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/role/login/', loginData)
       .then(response => {
         setLogin(response.data.errors)
         if (response.data.Message === "Admin Login Successfully!!") {
@@ -176,7 +176,7 @@ const AdminLogin = () => {
                     <div className='form-group px-5'>
                       <button className="btn btn-info my-1" style={{backgroundColor:'#321c60',color:'#ffff'}} disabled={loading}>
                         {loading ? (
-                          <span>Loading...</span>
+                          <span>Please Wait...</span>
                         ) : (
                           <span>Login</span>
                         )}

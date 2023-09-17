@@ -18,6 +18,7 @@ import ResetPassword from "./passwordreset"
 import Privacy from "./PrivacyPolicy"
 import MenTeamRanking from "./MenTeamsRanking"
 import New from "./New"
+import ContactUs from "./ContactUs"
 
 
 function Router() {
@@ -43,6 +44,7 @@ function Router() {
       <Route path='/privacyPolicy' element={<Privacy />} />
       <Route path='/menteamrank' element={<MenTeamRanking />} />
       <Route path='/new' element={<New/>}/>
+      <Route path='/contactus' element={<ContactUs/>}/>
     </Routes>
 
 
