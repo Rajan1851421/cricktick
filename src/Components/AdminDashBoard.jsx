@@ -383,7 +383,7 @@ function App() {
                 <div className="mb-3">
                   <label htmlFor="date" className="form-label">
                     Date:
-                  </label>
+                  </label>c
                   <input
                     type="date"
                     id="date"
