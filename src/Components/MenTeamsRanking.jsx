@@ -87,23 +87,26 @@ const CricketRankings = () => {
         <div className='container mt-5' id='AdminEmp'>
           <div className='my-5 team-rank-btn-container'>
             <button
+            
               onClick={handleButtonClick1}
               className='btn btn-light mx-3'
-              style={{ backgroundColor: '#321c60', color: 'white' }}
+              style={{ backgroundColor: '#321c60', color: 'white',marginTop:'20px' }}
             >
              &#9759;  Men's Test Rankings
             </button>
             <button
+            
               onClick={handleButtonClick2}
               className='btn btn-light mx-3'
-              style={{ backgroundColor: '#321c60', color: 'white' }}
+              style={{ backgroundColor: '#321c60', color: 'white',marginTop:'20px' }}
             >
               &#9759;Men's ODI Rankings
             </button>
             <button
+            
               onClick={handleButtonClick3}
               className='btn btn-light mx-3'
-              style={{ backgroundColor: '#321c60', color: 'white' }}
+              style={{ backgroundColor: '#321c60', color: 'white',marginTop:'20px' }}
             >
               &#9759;Men's T20 Rankings
             </button>

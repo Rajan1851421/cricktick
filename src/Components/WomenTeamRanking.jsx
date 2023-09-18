@@ -64,7 +64,7 @@ function WomenTeamRanking() {
               </center>
               {isLoading ? (
                 <center>
-                  <h2 className="text-center">Please Wait.....</h2>
+                  <h6 className="text-center" id='h1'>Please Wait.....</h6>
                 </center>
               ) : error ? (
                 <center>
