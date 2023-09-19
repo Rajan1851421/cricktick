@@ -95,6 +95,12 @@ body {
 	.Sign_Btn{
 		display: none!important;
 	}
+	.btn-light-dark{
+		/* background-color:red !important; */
+		width:100px !important;
+		text-align:center!important;
+		font-size:10px !important;
+	}
 }
 
 

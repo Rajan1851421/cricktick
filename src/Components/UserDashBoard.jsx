@@ -6,7 +6,7 @@ import "../Styles/admindashboard.css";
 function App() {
   const [section1Visible, setSection1Visible] = useState(true);
   const [section2Visible, setSection2Visible] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
   const [photoG, setPhotoG] = useState(' ')
   const [videoG, setVideoG] = useState(' ')
   const [updateData, setUPDateData] = useState('')
@@ -41,6 +41,7 @@ function App() {
 
   const handleFormSubmit = (e) => {
     console.log("clicked user news")
+    setIsLoading(true)
     e.preventDefault();
     // Create form data
     const formData = new FormData();
@@ -55,7 +56,7 @@ function App() {
     axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/', formData)
       .then((response) => {
         console.log(response.data);
-        if (response.data.status == 201) {
+        if (response.data.status === 201) {
           seNewsPost("News Upload Successfully");
 
           setTimeout(() => {
@@ -72,6 +73,8 @@ function App() {
       .catch((error) => {
         console.error(error);
         // Handle form submission error
+      }).finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
   };
 
@@ -126,6 +129,7 @@ function App() {
 
   const handleNewsUpdate = (e) => {
     e.preventDefault()
+    setIsLoading(true)
 
     let items = { title: titleG, description: descG, date: dateG, id: idG }
     axios.put(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
@@ -144,6 +148,8 @@ function App() {
       })
       .catch((error) => {
         console.error(error);
+      }).finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
   }
 
@@ -153,11 +159,12 @@ function App() {
 
 
   const handlePostCode = (e) => {
-    e.preventDefault();
+    e.preventDefault();    
     if (inputdata.trim() === '') {
       setTwiterStatus('Please enter your code');
       return;
     }
+    setIsLoading(true)
     const newInputData = { chtml: inputdata };
     axios
       .post('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/', newInputData)
@@ -176,7 +183,10 @@ function App() {
       })
       .catch(function (error) {
         // Handle error
-        //console.log(error);
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
   };
 
@@ -280,8 +290,9 @@ function App() {
                   className="form-control"
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
-                Submit
+              <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                {isLoading ? "Please wait..." : "Submit News"}
+                {isLoading && <i class="fa-solid fa-spinner fa-spin fa-spin-reverse"></i>}
               </button>
             </form>
             {/* View News Here */}
@@ -380,7 +391,11 @@ function App() {
                     onChange={(e) => setDateG(e.target.value)} />
                 </div>
 
-                <button onClick={handleNewsUpdate} className="btn btn-primary">Update</button>
+
+                <button onClick={handleNewsUpdate} className="btn btn-primary" disabled={isLoading}>
+                  {isLoading ? "Updating..." : "Update"}
+                  {isLoading && <i class="fa-solid fa-spinner fa-spin fa-spin-reverse"></i>}
+                </button>
               </form>
 
             </div>
@@ -412,9 +427,12 @@ function App() {
                   value={inputdata}
                 ></textarea>
               </div>
-              <button className="btn btn-warning" onClick={handlePostCode}>
-                Post code
+              
+              <button onClick={handlePostCode}className="btn btn-primary" disabled={isLoading}>
+                {isLoading ? "Posting..." : "Post Code"}
+                {isLoading && <i className="fa-solid fa-arrow-trend-up mx-1" style={{ color: 'red' }}></i>}
               </button>
+
             </form>
           </div>
 
@@ -431,7 +449,7 @@ function App() {
                   <tr>
                     <th>ID</th>
                     <th>CHTML</th>
-                  
+
                   </tr>
                 </thead>
                 <tbody>

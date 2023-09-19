@@ -30,13 +30,13 @@ function Navbar() {
             </div>
 
             <div>
-              <span 
-                className='btn btn-secondary mx-5 Sign_Btn px-3'
+              <div 
+                className='btn btn-secondary mx-5 px-3 btn-light-dark'
                 style={{ backgroundColor: 'transparent', color: '#fff',borderRadius:'50px' }}
                 onClick={toggleTheme}
               >
                 {theme === 'dark-theme' ? 'Light Mode ' : 'Dark Mode'}
-              </span>
+              </div>
               <Link
                 to='/login'
                 className='btn btn-secondary Sign_Btn mx-5'

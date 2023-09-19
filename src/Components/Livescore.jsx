@@ -20,8 +20,7 @@ function Livescore() {
   }, []);
 
   const handleLivescore = () => {
-    axios
-      .get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/Live_Interntonal/')
+    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/Live_Interntonal/')
       .then(response => {
         //console.log(response.data);
         setScoreData(response.data);

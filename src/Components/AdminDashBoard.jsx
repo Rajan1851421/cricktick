@@ -9,7 +9,7 @@ import "../Styles/admindashboard.css";
 function App() {
   const [section1Visible, setSection1Visible] = useState(true);
   const [section2Visible, setSection2Visible] = useState(false);
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [isDivVisible, setIsDivVisible] = useState(false);
   const [newsDel, setnewsDel] = useState('');
   const [subsDel, setSubsDel] = useState('');
@@ -38,11 +38,9 @@ function App() {
 
 
 
-
-
-
   const handleFormSubmit = (e) => {
-    console.log('clicked newspost')
+    setIsLoading(true);
+    // console.log('clicked newspost')
     e.preventDefault();
     // Create form data
     const formData = new FormData();
@@ -57,8 +55,9 @@ function App() {
     axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/', formData)
       .then((response) => {
         console.log(response);
-        if (response.data.status == 201) {
+        if (response.data.status === 201) {
           seNewsPost("News Upload Successfully");
+          console.log("Response");
           setTimeout(() => {
             seNewsPost('') // Clear the uplaod message after 3 seconds
           }, 3000)
@@ -69,13 +68,16 @@ function App() {
           setTimeout(() => {
             seNewsPost('') // Clear the uplaod message after 3 seconds
           }, 3000)
-
         }
+
 
       })
       .catch((error) => {
         console.error(error);
         // Handle form submission error
+      })
+      .finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
   };
 
@@ -117,6 +119,7 @@ function App() {
   // news Update javscript code 
 
   const handleNewsUpdate = (e) => {
+    setIsLoading(true)
     e.preventDefault()
     let items = { title: titleG, description: descG, date: dateG, id: idG }
     axios.put(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
@@ -137,6 +140,9 @@ function App() {
       })
       .catch((error) => {
         console.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
 
   }
@@ -219,6 +225,7 @@ function App() {
 
 
   const handlePostCode = (e) => {
+    setIsLoading(true);
     e.preventDefault()
     const newInputData = { chtml: inputdata }
     axios.post("https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/", newInputData)
@@ -237,7 +244,10 @@ function App() {
       })
       .catch(function (error) {
         // Handle error
-        //// console.log(error);
+        console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false); // Set loading state back to false regardless of success or error
       });
   }
 
@@ -247,7 +257,7 @@ function App() {
     axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/')
       .then(function (response) {
         // Handle success
-        //// console.log(response)
+        console.log(response)
         const newsData = (response.data)
 
 
@@ -278,7 +288,7 @@ function App() {
   };
   // contact us API intigration
   const handleContactus = () => {
-    axios.get(`http://127.0.0.1:8000/contact/get_post_social/`)
+    axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/contact/get_post_social/`)
       .then(response => {
         // console.log(response)
         setContact(response.data)
@@ -288,7 +298,7 @@ function App() {
   }
   // contact us delete data
   const handlecontactusDelete = (id) => {
-    axios.delete(`http://127.0.0.1:8000/contact/get_put_patch_delete_socialByID/${id}`)
+    axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/contact/get_put_patch_delete_socialByID/${id}`)
       .then(response => {
         if (response.data == "") {
           setContactusDelete("Data deleted successfully !! ")
@@ -392,8 +402,9 @@ function App() {
                     className="form-control"
                   />
                 </div>
-                <button type="submit" className="btn btn-primary" >
-                 Submit News<i class="fa-solid fa-arrow-trend-up mx-1" style={{color:'red'}}></i>
+                <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                  {isLoading ? "Please wait..." : "Submit News"}
+                  {isLoading && <i class="fa-solid fa-spinner fa-spin fa-spin-reverse"></i>}
                 </button>
               </form>
               <div className='border border-secondary p-3 rounded my-5' id='manulaNews'>
@@ -489,7 +500,11 @@ function App() {
                         onChange={(e) => setDateG(e.target.value)} />
                     </div>
 
-                    <button onClick={handleNewsUpdate} className="btn btn-primary">Update</button>
+                    {/* <button onClick={handleNewsUpdate} className="btn btn-primary">Update</button> */}
+                    <button onClick={handleNewsUpdate} className="btn btn-primary" disabled={isLoading}>
+                      {isLoading ? "Updating..." : "Update"}
+                      {isLoading && <i class="fa-solid fa-spinner fa-spin fa-spin-reverse"></i>}
+                    </button>
                   </form>
 
                 </div>
@@ -551,7 +566,12 @@ function App() {
                   <textarea className="form-control " id="exampleFormControlTextarea1" rows="10" required
                     onChange={(e) => setInputData(e.target.value)}></textarea>
                 </div>
-                <button className='btn btn-warning' onClick={handlePostCode}>Post code</button>
+                {/* <button className='btn btn-warning' onClick={handlePostCode}>Post code</button> */}
+                <button onClick={handlePostCode} className="btn btn-primary" disabled={isLoading}>
+                  {isLoading ? "Posting ....." : "Post Code"}
+                  {isLoading && <i class="fa-solid fa-spinner fa-spin fa-spin-reverse"></i>}
+                </button>
+
 
               </form>
 

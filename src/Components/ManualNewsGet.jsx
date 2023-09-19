@@ -84,17 +84,17 @@ function ManualNewsGet() {
                                 ? truncateText(item.description, 20) + '...'
                                 : item.description}
                             </p>
+                            <p className='text-text' id='h1'>
+                              {item.date}
+                            </p>
                             {isMoreThan20Words(item.description) && (
                               <button
-                                className='btn btn-link'
+                                className='btn btn-link text-decoration-none border p-2'                               
                                 onClick={() => toggleExpand(index)}
                               >
                                 {expandedIndex === index ? 'Read Less' : 'Read More'}
                               </button>
-                            )}
-                            <p className='text-text' id='h1'>
-                              {item.date}
-                            </p>
+                            )}                            
                           </div>
                         </div>
                       </div>
