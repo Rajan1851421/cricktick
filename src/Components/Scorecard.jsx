@@ -12,15 +12,13 @@ function Scorecard() {
   const [showSecondInnings, setShowSecondInnings] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setIsLoading(true);
-    axios
-      .get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/scorecard/')
+    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/scorecard/')
       .then(response => {
-        setScorecards(response.data);
-        
+        setScorecards(response.data);        
         setIsLoading(false);
-        setSelectedScorecard(response.data[0]);
-        
+        setSelectedScorecard(response.data[0]);        
       })
       .catch(error => {
         console.log(error);

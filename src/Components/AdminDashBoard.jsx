@@ -57,11 +57,13 @@ function App() {
         console.log(response);
         if (response.data.status === 201) {
           seNewsPost("News Upload Successfully");
-          console.log("Response");
+          // console.log("Response");      
+          
           setTimeout(() => {
             seNewsPost('') // Clear the uplaod message after 3 seconds
           }, 3000)
           //// console.log("News Uploaded")
+
 
         } else {
           seNewsPost("News Upload Successfully")
@@ -351,8 +353,8 @@ function App() {
                     accept="image/*"
                     onChange={(e) => setVideo(e.target.files[0])}
                     className="form-control"
-                  //disabled={photo ? true : false}
-                  required
+                    //disabled={photo ? true : false}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -366,7 +368,7 @@ function App() {
                     onChange={(e) => setPhoto(e.target.files[0])}
                     className="form-control"
                     required
-                    // disabled={video ? true : false}
+                  // disabled={video ? true : false}
                   />
                 </div>
                 <div className="mb-3">
@@ -380,7 +382,7 @@ function App() {
                     onChange={(e) => setTitle(e.target.value)}
                     className="form-control"
                     required
-                     />
+                  />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">
@@ -469,7 +471,7 @@ function App() {
                       <label for="exampleInputEmail1">Select file</label>
                       <input type="file" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Upload Image"
                         files={photoG}
-                        onChange={(e) => setPhotoG(e.target.files[0])}  />
+                        onChange={(e) => setPhotoG(e.target.files[0])} />
 
                     </div>
 
