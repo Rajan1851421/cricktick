@@ -6,3 +6,9 @@
     border-radius: 10px;
     box-shadow: rgb(144, 145, 146) 0px 10px 10px -10px;
 }
+@media (min-width: 320px) and (max-width: 767px){
+    .about-img{
+        display: none !important;
+    }
+    
+}

@@ -33,7 +33,7 @@ function RegisterPage() {
         const validationErrors = validateFormData(formData);
         if (Object.keys(validationErrors).length === 0) {
 
-            axios.post("https://backend-ekms.onrender.com/role/register/", formData)
+            axios.post("https://liveupcomingpro-production-f9ac.up.railway.app/role/register/", formData)
                 .then((response) => {
                     //console.log(response);
                     if (response.status == 201) {

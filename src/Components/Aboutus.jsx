@@ -11,7 +11,7 @@ function Aboutus() {
     <>
       <div className="container-fluid Full-Width-About py-5">
         <div className='container  my-2 px-5 py-3 rounded' id='text-About' >
-          <h3 className='text-center ' id='h1'> <img src="https://img.freepik.com/free-vector/employees-meeting-office-kitchen-drinking-coffee_74855-5237.jpg?size=626&ext=jpg&ga=GA1.1.180599784.1691488875&semt=sph" alt="" style={{height:'80px',width:'180px',marginBottom:'20px'}}/>About Us</h3><hr />
+          <h3 className='text-center ' id='h1'> <img className='about-img' src="https://img.freepik.com/free-vector/employees-meeting-office-kitchen-drinking-coffee_74855-5237.jpg?size=626&ext=jpg&ga=GA1.1.180599784.1691488875&semt=sph" alt="" style={{height:'80px',width:'180px',marginBottom:'20px'}}/>About Us</h3><hr />
           <div className="row d-flex justify-content-around mt-5 align-items-center">
             <div className="col-md-3 About-box ">
 
@@ -31,13 +31,13 @@ function Aboutus() {
 
               <h3 className='text-center'>Daily Visitor</h3><hr />
               <h1 className='text-center fst-italic'>1000K+</h1>
-              <img src="https://img.freepik.com/free-photo/3d-render-pointing-hand-gesture-palm-with-finger_107791-15938.jpg?size=626&ext=jpg&ga=GA1.2.180599784.1691488875&semt=ais" alt="" style={{ height: '70px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', marginTop: '20px', background: 'transparent' }} />
+              <img  src="https://img.freepik.com/free-photo/3d-render-pointing-hand-gesture-palm-with-finger_107791-15938.jpg?size=626&ext=jpg&ga=GA1.2.180599784.1691488875&semt=ais" alt="" style={{ height: '70px', marginLeft: 'auto', marginRight: 'auto', display: 'flex', marginTop: '20px', background: 'transparent' }} />
             </div>
 
           </div> <hr />
 
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 ">
               <h2 className='my-5 text-center' >Who we are... <img src="https://img.freepik.com/free-vector/human-hand-writing-isolated_1308-113867.jpg?size=626&ext=jpg&ga=GA1.2.180599784.1691488875&semt=ais" alt="" style={{height:'40px'}} /> </h2> <hr />
               <p className='text-left fw-500 fs-5 mt-2 mb-2 py-3  ' id='text-About' style={{ backgroundColor: 'transparent' }}>
                 Welcome to our website! We are your ultimate destination for everything related to cricket news, insights, stats, live scores, and much more. <br /> As passionate cricket enthusiasts, we strive to provide you with the most comprehensive coverage of the sport, keeping you updated and engaged with the latest happenings in the cricketing world.

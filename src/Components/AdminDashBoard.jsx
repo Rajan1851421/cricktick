@@ -352,6 +352,7 @@ function App() {
                     onChange={(e) => setVideo(e.target.files[0])}
                     className="form-control"
                   //disabled={photo ? true : false}
+                  required
                   />
                 </div>
                 <div className="mb-3">
@@ -364,7 +365,8 @@ function App() {
                     accept="image/*"
                     onChange={(e) => setPhoto(e.target.files[0])}
                     className="form-control"
-                  // disabled={video ? true : false}
+                    required
+                    // disabled={video ? true : false}
                   />
                 </div>
                 <div className="mb-3">
@@ -377,7 +379,8 @@ function App() {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     className="form-control"
-                  />
+                    required
+                     />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">
@@ -387,6 +390,7 @@ function App() {
                     id="description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                    required
                     className="form-control"
                   />
                 </div>
@@ -400,6 +404,7 @@ function App() {
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     className="form-control"
+                    required
                   />
                 </div>
                 <button type="submit" className="btn btn-primary" disabled={isLoading}>
@@ -464,7 +469,7 @@ function App() {
                       <label for="exampleInputEmail1">Select file</label>
                       <input type="file" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Upload Image"
                         files={photoG}
-                        onChange={(e) => setPhotoG(e.target.files[0])} />
+                        onChange={(e) => setPhotoG(e.target.files[0])}  />
 
                     </div>
 

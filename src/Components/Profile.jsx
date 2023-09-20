@@ -31,7 +31,7 @@ function ProfileView() {
   }, [profileId]);
 
   const fetchProfile = () => {
-    axios.get(`https://backend-ekms.onrender.com/profile/putProfileview/${profileId}/`)
+    axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/profile/putProfileview/${profileId}/`)
       .then(response => {
         //console.log(response)
         setProfile(response.data);
@@ -43,7 +43,7 @@ function ProfileView() {
 
   const updateProfile = () => {
     const updatedProfile = { ...profile, candidateName: 'New Name' }; // Replace with the updated profile data
-    axios.put(`https://backend-ekms.onrender.com/profile/putProfileview/${profileId}/`, updatedProfile)
+    axios.put(`https://liveupcomingpro-production-f9ac.up.railway.app/profile/putProfileview/${profileId}/`, updatedProfile)
       .then(response => {
         //console.log(response);
       })
@@ -53,7 +53,7 @@ function ProfileView() {
   };
 
   const deleteProfile = () => {
-    axios.delete(`https://backend-ekms.onrender.com/profile/putProfileview/${profileId}/`)
+    axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/profile/putProfileview/${profileId}/`)
       .then(response => {
         //console.log(response);
       })
@@ -74,7 +74,7 @@ function ProfileView() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.post('https://backend-ekms.onrender.com/profile/Profileview/', formData)
+    axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/profile/Profileview/', formData)
       .then(response => {
         //console.log(response);
       })
@@ -84,7 +84,7 @@ function ProfileView() {
   };
 
   useEffect(() => {
-    axios.get('https://backend-ekms.onrender.com/profile/GetProfileview/')
+    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/profile/GetProfileview/')
       .then(response => {
         setProfileData(response.data);
       })

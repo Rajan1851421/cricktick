@@ -34,7 +34,7 @@ const Upcoming_Events = () => {
         </div>
 
         {Object.keys(data).length === 0 ? (
-          <p className='text-center'><PageNotFound/></p>
+          <p className='text-center'>Loading data...</p>
         ) : (
           <div className='table-responsive rounded tableFixHead' id='table'>
             <table className='table w-100'>
