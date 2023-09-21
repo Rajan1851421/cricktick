@@ -5,13 +5,13 @@ import { useParams, Link } from 'react-router-dom'
 
 function FullNews() {
     const { id } = useParams()
-    console.log(id)
+    // console.log(id)
     const [news, setNews] = useState([])
     useEffect(() => {
         window.scrollTo(0, 0);
         axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${id}`)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 setNews(response.data)
             })
             .catch((error) => {
