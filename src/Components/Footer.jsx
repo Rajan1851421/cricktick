@@ -6,8 +6,8 @@ import '../Styles/footer.css';
 function Footer() {
   return (
     <div className='container-fluid py-5 ' style={{
-      borderTopRightRadius: '10px',
-      borderTopLeftRadius: '10px',
+      borderTopRightRadius: '0px',
+      borderTopLeftRadius: '0px',
       backgroundColor: '#1e1e1f',
       color: '#FFFFFF',
       fontWeight: '500',

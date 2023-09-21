@@ -19,6 +19,7 @@ import Privacy from "./PrivacyPolicy"
 import MenTeamRanking from "./MenTeamsRanking"
 import New from "./New"
 import ContactUs from "./ContactUs"
+import FullNewsDetail from "./FullNews"
 
 
 function Router() {
@@ -45,6 +46,7 @@ function Router() {
       <Route path='/menteamrank' element={<MenTeamRanking />} />
       <Route path='/new' element={<New/>}/>
       <Route path='/contactus' element={<ContactUs/>}/>
+      <Route path='/fullnewsDetail/:id' element={<FullNewsDetail/>}/>
     </Routes>
 
 

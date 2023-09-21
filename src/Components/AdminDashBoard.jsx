@@ -55,7 +55,7 @@ function App() {
     axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/', formData)
       .then((response) => {
         console.log(response);
-        if (response.data.status === 201) {
+        if (response.data.status == 201) {
           seNewsPost("News Upload Successfully");
           // console.log("Response");      
           
@@ -350,7 +350,7 @@ function App() {
                   <input
                     type="file"
                     id="video"
-                    accept="image/*"
+                    accept="video/*"
                     onChange={(e) => setVideo(e.target.files[0])}
                     className="form-control"
                     //disabled={photo ? true : false}
