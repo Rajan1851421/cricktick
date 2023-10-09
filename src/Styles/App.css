@@ -1,11 +1,12 @@
 .dark-theme {
     --mian-heading: #4B059B  !important;
+    --mian-livecoreText: #f6f5f8  !important;
     --para-color: rgb(252, 248, 248) !important;
     --btn-text-clr: rgb(209, 206, 206) !important;
     --bg-color: rgb(46, 45, 45) !important;
-    --nav-color:rgb(32, 32, 32)!important;
+    --nav-color:rgb(48, 48, 48)!important;
    --p-color:rgb(255, 255, 255);
-   --b-color:rgb(29, 28, 28);
+   --b-color:rgb(49, 49, 49);
    
 
 }
@@ -13,7 +14,7 @@
 .light-theme {
     --p-color:rgb(32, 32, 32);
     --b-color:rgb(255, 255, 255);
-    
+    --mian-livecoreText: #24024b  !important;
     --mian-heading: rgb(216, 201, 215) !important;
     --para-color: rgb(5, 5, 5) !important;
     --btn-text-clr: rgb(20, 20, 20) !important;
@@ -78,6 +79,9 @@
 }
 #h1{
     color:var(--p-color);
+}
+#livescoreScoreText{
+    color:var(--mian-livecoreText);
 }
 #ranking-container{
     background-color:var(--b-color)

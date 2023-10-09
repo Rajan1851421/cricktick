@@ -1,4 +1,5 @@
 .About-box {
+    
     background-color: rgba(73, 2, 131, 0.034);
     height: 270px;
     margin-top: 30px !important;
@@ -9,6 +10,9 @@
 @media (min-width: 320px) and (max-width: 767px){
     .about-img{
         display: none !important;
+    }
+    .About-box{
+        padding: 1px;
     }
     
 }

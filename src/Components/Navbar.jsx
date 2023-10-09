@@ -31,19 +31,20 @@ function Navbar() {
 
             <div>
               <div 
-                className='btn btn-secondary mx-5 px-3 btn-light-dark'
-                style={{ backgroundColor: 'transparent', color: '#fff',borderRadius:'50px' }}
+                className='btn btn-none mx-5 px-3 btn-light-dark fs-7'
+                style={{ backgroundColor: 'transparent',fontSize:'12px' }}
                 onClick={toggleTheme}
               >
-                {theme === 'dark-theme' ? 'Light Mode ' : 'Dark Mode'}
+                {theme === 'dark-theme' ? <img src='https://www.crictracker.com/_next/static/media/dark-mode.a8b195e8.svg'/> : <img src='https://www.crictracker.com/_next/static/media/light-mode.6f89d25e.svg'/>}
               </div>
               <Link
                 to='/login'
                 className='btn btn-secondary Sign_Btn mx-5'
-                style={{ backgroundColor: '#ffff', color: 'black' }}
+                style={{ backgroundColor: '#ffff', color: 'black',fontSize:'12px' }}
               >
                 Sign In
               </Link>
+              
             </div>
           </div>
         </div>

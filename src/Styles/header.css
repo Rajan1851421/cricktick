@@ -7,18 +7,10 @@
 
 }
 
-.header1 {
-	border:1px solid !important;
-	height:130px !important;
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-}
 
-.header2 {
-	
+.header2 {	
 	position: sticky;
-	top: 130px;
+	top: 50px;
 	z-index: 100;
 }
 
@@ -38,10 +30,6 @@ body {
 	border-left: none;
 	border-bottom: none;
 	padding: 0px 60px 0px 0px;
-}
-
-.nav {
-	margin-left: 40px;
 }
 
 
@@ -82,9 +70,8 @@ body {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	height: 70px !important;
-	background-color:#321c60;
-	
+	height: 87px !important;	
+	background-color:#321c60;	
 }
 
 
@@ -94,6 +81,7 @@ body {
 	
 	.Sign_Btn{
 		display: none!important;
+		overflow: hidden;
 	}
 	.btn-light-dark{
 		/* background-color:red !important; */

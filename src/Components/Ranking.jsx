@@ -191,7 +191,7 @@ function App() {
                                             ))
                                         ) : (
                                             <tr>
-                                                <td colSpan="4"><PageNotFound/></td>
+                                                <td colSpan="4">No Data available</td>
                                             </tr>
                                         )}
                                     </tbody>

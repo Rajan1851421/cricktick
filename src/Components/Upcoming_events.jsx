@@ -9,7 +9,8 @@ const Upcoming_Events = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
-      .get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/InternetionalEvent/')
+      // .get('https://liveupcomingpro-production.up.railway.app/cricinfo/InternetionalEvent/')
+      .get('http://127.0.0.1:8000/cricinfo/InternetionalEvent/')
       .then((response) => {
         console.log(response);
         setData(response.data.dict);

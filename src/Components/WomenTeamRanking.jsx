@@ -64,11 +64,11 @@ function WomenTeamRanking() {
               </center>
               {isLoading ? (
                 <center>
-                  <h6 className="text-center" id='h1'>Please Wait.....</h6>
+                  <h6 className="text-center text-success" id='h1'>Please Wait.....</h6>
                 </center>
               ) : error ? (
                 <center>
-                  <h2 className="text-center text-danger border">{error}</h2>
+                  <h2 className="text-center text-danger border"></h2>
                 </center>
               ) : (
                 <div className='container'>
@@ -94,7 +94,7 @@ function WomenTeamRanking() {
                           ))
                         ) : (
                           <tr>
-                            <h3><td colSpan="5" className="text-center">No data available</td></h3>
+                            <h3><td colSpan="5" className="text-center"></td></h3>
 
                           </tr>
                         )}
@@ -138,7 +138,7 @@ function WomenTeamRanking() {
                           ))
                         ) : (
                           <tr>
-                            <td colSpan="5">No data available</td>
+                            <td colSpan="5" className="text-center text-danger">No data available</td>
                           </tr>
                         )}
                       </tbody>

@@ -236,7 +236,7 @@ function App() {
                 <input
                   type="file"
                   id="video"
-                  accept="image/*"
+                  accept="video/*"
                   onChange={(e) => setVideo(e.target.files[0])}
                   className="form-control"
                 //disabled={photo ? true : false}

@@ -62,7 +62,6 @@ function FullNews() {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
