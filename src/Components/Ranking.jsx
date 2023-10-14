@@ -21,9 +21,9 @@ function App() {
         window.scrollTo(0, 0);
         handleClick(
             [
-                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenTestRanking/",
-                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenODIRanking/",
-                "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenT20Ranking/",
+                "http://127.0.0.1:8000/cricinfo/BatMenTestRanking/",
+                "http://127.0.0.1:8000/cricinfo/BatMenODIRanking/",
+                "http://127.0.0.1:8000/cricinfo/BatMenT20Ranking/",
             ],
             "batsman"
         );
@@ -64,9 +64,9 @@ function App() {
                         onClick={() =>
                             handleClick(
                                 [
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenTestRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenODIRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatMenT20Ranking/",
+                                    "http://127.0.0.1:8000/cricinfo/BatMenTestRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/BatMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/BatMenT20Ranking/",
                                 ],
                                 "batsman"
                             )
@@ -79,9 +79,9 @@ function App() {
                         onClick={() =>
                             handleClick(
                                 [
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenTestRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenODIRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/bowlerMenT20Ranking/",
+                                    "http://127.0.0.1:8000/cricinfo/bowlerMenTestRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/bowlerMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/bowlerMenT20Ranking/",
                                 ],
                                 "bowlers"
                             )
@@ -94,9 +94,9 @@ function App() {
                         onClick={() =>
                             handleClick(
                                 [
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenTestRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenODIRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderMenT20Ranking/",
+                                    "http://127.0.0.1:8000/cricinfo/AllrounderMenTestRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/AllrounderMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/AllrounderMenT20Ranking/",
                                 ],
                                 "allRounders"
                             )
@@ -109,9 +109,9 @@ function App() {
                         onClick={() =>
                             handleClick(
                                 [
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BatWoMenODIRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/BowlerWoMenODIRanking/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/AllrounderWoMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/BatWoMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/BowlerWoMenODIRanking/",
+                                    "http://127.0.0.1:8000/cricinfo/AllrounderWoMenODIRanking/",
                                 ],
                                 "womenODI"
                             )
@@ -124,9 +124,9 @@ function App() {
                         onClick={() =>
                             handleClick(
                                 [
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Bowler/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Bat/",
-                                    "https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Allrounder/",
+                                    "http://127.0.0.1:8000/cricinfo/WomenT20Bowler/",
+                                    "http://127.0.0.1:8000/cricinfo/WomenT20Bat/",
+                                    "http://127.0.0.1:8000/cricinfo/WomenT20Allrounder/",
                                 ],
                                 "womenT20"
                             )

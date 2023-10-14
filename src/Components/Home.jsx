@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import ManualNewsGet from "./ManualNewsGet";
 import TradingTweet from "./TradingTweet"
-import Livescore from "./Livescore";
+import StaticPage from './StaticPage'
+import UpcomingEvent from './Upcoming_events'
+
 
 function ScoreTable() {
   const [scoreData, setScoreData] = useState(null);
@@ -58,48 +60,55 @@ function ScoreTable() {
     );
   };
 
-
-
   return (
     <>
       <div className='container-fluid py-3 mt-5 ' id='AdminEmp'>
         {/* On top show some score data on home page */}
-        <div className="container">
+        
           <div className="row">
             <div className="col">
-              {isLoading ? ( // Show loading message while isLoading is true
-                <center><h5>Please wait....</h5></center>
+              {isLoading ? (
+                // Show loading message while isLoading is true
+                <center><h5 id='h1'>Please wait....</h5></center>
               ) : (
-                scoreData && (
-                  <div className="container">
+                scoreData && scoreData.live.overview.length > 0 ? (
+                  <div className="container-fluid">
                     <div className="row">
                       {scoreData.live.overview.slice(0, 3).map((_, index) => (
                         <ScoreCard score={scoreData} index={index} key={index} />
                       ))}
                     </div>
                   </div>
+                ) : (
+                  // Show a message when no data is present
+                  <center><h5 id='h1'> <StaticPage /> </h5></center>
                 )
               )}
             </div>
-          </div>
+          
         </div>
-        <div className="container" id='AdminEmp'>
+        <div className="container-fluid" id='AdminEmp'>
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-4 col-sm-12">
               <Link to='/manualNewsGet' className='text-decoration-none'>
                 <ManualNewsGet />
               </Link>
+            </div>
+            <div className="col-md-4 col-sm-12 ">
+              <Link to='/upcoming_events' className='text-decoration-none'>
+                <UpcomingEvent />
+              </Link>
 
             </div>
-            <div className="col-md-4">
-              <TradingTweet />
+            <div className="  col-md-4 col-sm-12">
+              <Link to='/manualNewsGet' className='text-decoration-none'>
+                <TradingTweet />
+              </Link>
+
             </div>
           </div>
         </div>
-      </div>  
-
-
-
+      </div>
     </>
   );
 }

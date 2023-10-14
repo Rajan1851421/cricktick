@@ -16,12 +16,12 @@ function Newssubscibe() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowModal(true);
-        }, 30000);
+        }, 300000);
         return () => clearTimeout(timer);
     })
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/subscription/get_post_social/', {
+        axios.post('http://127.0.0.1:8000/subscription/get_post_social/', {
                 name: name,
                 email: email,
                 whatsapp: whatsapp
@@ -42,7 +42,7 @@ function Newssubscibe() {
                     setTimeout(() => {
                         setMsg('') // Clear the twiterStatus message after 3 seconds
                         setShowModal(false);
-                    }, 5000)
+                    }, 59000)
                     
                     // Setmessage('You are Subscribed !!')
                     
@@ -51,7 +51,7 @@ function Newssubscibe() {
                 }
             })
             .catch(error => {
-                //console.log(error);
+                console.log(error);
             });
     };
 

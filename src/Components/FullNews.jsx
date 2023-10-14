@@ -4,14 +4,15 @@ import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 function FullNews() {
+    const [photourl, setPhotoUrl] = useState('http://127.0.0.1:8000/')
     const { id } = useParams()
     // console.log(id)
     const [news, setNews] = useState([])
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${id}`)
+        axios.get(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_socialByID/${id}`)
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 setNews(response.data)
             })
             .catch((error) => {
@@ -40,11 +41,11 @@ function FullNews() {
                                 <div class="card-body">
                                     <div className="row d-flex justify-content-evenly">
                                         <div className="col-md-5  text-center ">
-                                            <img className="img-thumbnail" src={news.upload_photo} alt="no image" />
+                                            <img className="img-thumbnail"  src={`${photourl}${news.upload_photo}`} alt="no image" />
                                         </div>
                                         <div className="col-md-5  text-center">
                                             <div class="embed-responsive embed-responsive-4by3">
-                                                <iframe class="embed-responsive-item" src={news.upload_video}></iframe>
+                                                <iframe class="embed-responsive-item"  src={`${photourl}${news.upload_video}`}></iframe>
                                             </div>
                                             {/* <video src={news.upload_video}></video> */}
                                         </div>

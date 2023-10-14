@@ -38,7 +38,7 @@ const AdminLogin = () => {
     };
     setLoading(true); // Start loading indication
 
-    axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/role/login/', loginData)
+    axios.post('http://127.0.0.1:8000/role/login/', loginData)
       .then(response => {
         setLogin(response.data.errors)
         if (response.data.Message === "Admin Login Successfully!!") {

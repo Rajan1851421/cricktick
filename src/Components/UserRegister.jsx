@@ -34,7 +34,7 @@ function RegisterPage() {
         if (Object.keys(validationErrors).length === 0) {
 
             axios
-                .post("https://liveupcomingpro-production-f9ac.up.railway.app/role/register/", formData)
+                .post("http://127.0.0.1:8000/role/register/", formData)
                 .then((response) => {
                     //console.log(response);
                     if (response.status === 201) {

@@ -52,7 +52,7 @@ function App() {
 
     // Make a POST request to submit the form data
 
-    axios.post('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/', formData)
+    axios.post('http://127.0.0.1:8000/manual_news/get_post_social/', formData)
       .then((response) => {
         console.log(response);
         if (response.data.status == 201) {
@@ -90,7 +90,7 @@ function App() {
 
 
   const HandleNews = () => {
-    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/')
+    axios.get('http://127.0.0.1:8000/manual_news/get_post_social/')
       .then(function (response) {
 
         const newsData = (response.data)
@@ -124,7 +124,7 @@ function App() {
     setIsLoading(true)
     e.preventDefault()
     let items = { title: titleG, description: descG, date: dateG, id: idG }
-    axios.put(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
+    axios.put(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
       .then((response) => {
         //  //// console.log(response);
         if (response.statusText == "OK") {
@@ -154,7 +154,7 @@ function App() {
   const HandleNewsDalete = async (id) => {
     //// console.log(id)
     try {
-      await axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_socialByID/${id}`)
+      await axios.delete(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_socialByID/${id}`)
         .then(response => {
           //// console.log(response)
           if (response.data == "") {
@@ -179,7 +179,7 @@ function App() {
   // SBUSCRIBER SECTION JAVSCRIPT CODE
   const HandleSubscriber = () => {
     //// console.log("Clicked Subscriber")
-    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/subscription/get_post_social/')
+    axios.get('http://127.0.0.1:8000/subscription/get_post_social/')
       .then(response => {
         //  //// console.log(response)
         setSubsdata(response.data)
@@ -193,7 +193,7 @@ function App() {
   //-------------------------->Handle Remove subcriber<----------------------------------
   const HandleSubscriberDelete = (id) => {
 
-    axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/subscription/get_put_patch_delete_socialByID/${id}`)
+    axios.delete(`http://127.0.0.1:8000/subscription/get_put_patch_delete_socialByID/${id}`)
       .then(response => {
         if (response.data == "") {
           setSubsDel('Item deleted successfully')
@@ -230,7 +230,7 @@ function App() {
     setIsLoading(true);
     e.preventDefault()
     const newInputData = { chtml: inputdata }
-    axios.post("https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/", newInputData)
+    axios.post("http://127.0.0.1:8000/manual_news/get_post_twitter/", newInputData)
       .then(function (response) {
         if (response.data.id > 0) {
           setTwiterStatus("Successfully Created !!!!!")
@@ -256,7 +256,7 @@ function App() {
 
 
   const handleGetTwiter = () => {
-    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/')
+    axios.get('http://127.0.0.1:8000/manual_news/get_post_twitter/')
       .then(function (response) {
         // Handle success
         console.log(response)
@@ -275,7 +275,7 @@ function App() {
   const handlePostDelete = async (id) => {
     //// console.log(id)
     try {
-      await axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_put_patch_delete_twitterByID/${id}`);
+      await axios.delete(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_twitterByID/${id}`);
 
       setDel('Item deleted successfully');
       handleGetTwiter()
@@ -290,7 +290,7 @@ function App() {
   };
   // contact us API intigration
   const handleContactus = () => {
-    axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/contact/get_post_social/`)
+    axios.get(`http://127.0.0.1:8000/contact/get_post_social/`)
       .then(response => {
         // console.log(response)
         setContact(response.data)
@@ -300,7 +300,7 @@ function App() {
   }
   // contact us delete data
   const handlecontactusDelete = (id) => {
-    axios.delete(`https://liveupcomingpro-production-f9ac.up.railway.app/contact/get_put_patch_delete_socialByID/${id}`)
+    axios.delete(`http://127.0.0.1:8000/contact/get_put_patch_delete_socialByID/${id}`)
       .then(response => {
         if (response.data == "") {
           setContactusDelete("Data deleted successfully !! ")

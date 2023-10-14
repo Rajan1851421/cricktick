@@ -16,7 +16,7 @@ const CricketRankings = () => {
   const handleButtonClick1 = () => {
     setLoading(true); // Show loading message
     axios
-      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenTeamsTestRanking/`)
+      .get(`http://127.0.0.1:8000/cricinfo/MenTeamsTestRanking/`)
       .then(response => {
         //console.log(response)
         if (response.status == 200) {
@@ -41,7 +41,7 @@ const CricketRankings = () => {
   const handleButtonClick2 = () => {
     setLoading(true);
     axios
-      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenODITeamsRanking/`)
+      .get(`http://127.0.0.1:8000/cricinfo/MenODITeamsRanking/`)
       .then(response => {
         if (response.status == 200) {
           setTableData(JSON.parse(response.data));
@@ -63,7 +63,7 @@ const CricketRankings = () => {
   const handleButtonClick3 = () => {
     setLoading(true);
     axios
-      .get(`https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/MenT20TeamsRanking/`)
+      .get(`http://127.0.0.1:8000/cricinfo/MenT20TeamsRanking/`)
       .then(response => {
         if (response.status == 200) {
           setTableData(JSON.parse(response.data));

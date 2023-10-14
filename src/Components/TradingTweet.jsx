@@ -10,7 +10,7 @@ function TweetEmbed() {
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
-      .get('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_twitter/')
+      .get('http://127.0.0.1:8000/manual_news/get_post_twitter/')
       .then(response => {
         //console.log(response);
         setTweetData(response.data);

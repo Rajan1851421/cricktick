@@ -9,10 +9,11 @@ function ManualNewsGet() {
   const [error, setError] = useState(null); // Updated error state
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(-1);
+  const [photourl, setPhotoUrl] = useState('http://127.0.0.1:8000/')
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/manual_news/get_post_social/')
+    axios.get('http://127.0.0.1:8000/manual_news/get_post_social/')
       .then(function (response) {
         const newsData = response.data;
         const currentDate = new Date();
@@ -69,7 +70,12 @@ function ManualNewsGet() {
                       <div className='row g-0'>
                         <div className='col-md-4'>
                           <img
-                            src={item.upload_photo}
+                            src={`${photourl}${item.upload_photo}`}
+                            className='img-fluid rounded-start'
+                            alt='Card'
+                          /> <br/>
+                          <img
+                            src={`${photourl}${item.upload_video}`}
                             className='img-fluid rounded-start'
                             alt='Card'
                           />

@@ -18,8 +18,8 @@ function WomenTeamRanking() {
   const handleTeam = () => {
     setIsLoading(true);
 
-    const t1 = axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenT20Teams/');
-    const t2 = axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/WomenODITeams/');
+    const t1 = axios.get('http://127.0.0.1:8000/cricinfo/WomenT20Teams/');
+    const t2 = axios.get('http://127.0.0.1:8000/cricinfo/WomenODITeams/');
    
     axios.all([t1, t2])
       .then(axios.spread((t11, t22) => {

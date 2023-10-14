@@ -7,7 +7,10 @@ function PrivacyPolicy() {
   return (
     <>
       <div className="container-fluid Full-Width-About py-5 mt-5">
-        <div className='container border border-secondary my-2 px-5 py-3 rounded ' id='text-About'>
+        <div className='container  my-2 px-5 py-3 rounded ' id='text-About' 
+        style={{ border: '1px solid rgba(135, 19, 126, 0.8)',backGroundColor:'rgba(54, 19, 135, 0.71)' }}
+
+        >
 
           <h1 className=' text-center' id='text-About'><img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37375.jpg?size=626&ext=jpg&ga=GA1.1.180599784.1691488875&semt=ais" alt="" style={{height:'70px'}} /> Privacy policy</h1><br />
           <p className='text-left fw-normal fs-6 mt-2 mb-2' id='text-About'>
