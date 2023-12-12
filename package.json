@@ -24,7 +24,8 @@
     "react-twitter-embed": "^4.0.4",
     "tar": "^6.1.13",
     "use-history": "^1.4.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "get-symbol-upload_photo": "1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,5 +55,8 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "react-router-dom": "^6.11.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
