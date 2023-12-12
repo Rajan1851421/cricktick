@@ -31,7 +31,7 @@ function ProfileView() {
   }, [profileId]);
 
   const fetchProfile = () => {
-    axios.get(`https://liveupcomingpro-production-f9ac.up.railway.app/profile/putProfileview/${profileId}/`)
+    axios.get(`https://backend-ekms.onrender.com/profile/putProfileview/${profileId}/`)
       .then(response => {
         //console.log(response)
         setProfile(response.data);

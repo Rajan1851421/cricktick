@@ -35,7 +35,7 @@ const ContactForm = () => {
       msg: message
     };
 
-    axios.post('http://127.0.0.1:8000/contact/get_post_social/', newPost)
+    axios.post('https://backend-ekms.onrender.com/contact/get_post_social/', newPost)
       .then(response => {
         console.log(response.data)
         if (response.data.id > 0) {

@@ -53,7 +53,7 @@ function App() {
 
     // Make a POST request to submit the form data
 
-    axios.post('http://127.0.0.1:8000/manual_news/get_post_social/', formData)
+    axios.post('https://backend-ekms.onrender.com/manual_news/get_post_social/', formData)
       .then((response) => {
         console.log(response.data);
         if (response.data.status === 201) {
@@ -85,7 +85,7 @@ function App() {
 
 
   const getManualNews = () => {
-    axios.get('http://127.0.0.1:8000/manual_news/get_post_social/')
+    axios.get('https://backend-ekms.onrender.com/manual_news/get_post_social/')
       .then(function (response) {
         // Handle success
         console.log(response)
@@ -132,7 +132,7 @@ function App() {
     setIsLoading(true)
 
     let items = { title: titleG, description: descG, date: dateG, id: idG }
-    axios.put(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
+    axios.put(`https://backend-ekms.onrender.com/manual_news/get_put_patch_delete_socialByID/${idG}`, items)
       .then((response) => {
         console.log(response);
         if (response.statusText == "") {
@@ -167,7 +167,7 @@ function App() {
     setIsLoading(true)
     const newInputData = { chtml: inputdata };
     axios
-      .post('http://127.0.0.1:8000/manual_news/get_post_twitter/', newInputData)
+      .post('https://backend-ekms.onrender.com/manual_news/get_post_twitter/', newInputData)
       .then(function (response) {
         console.log(response)
         if (response.data.id > 0) {
@@ -193,7 +193,7 @@ function App() {
 
   const handleGetTwiter = () => {
     axios
-      .get('http://127.0.0.1:8000/manual_news/get_post_twitter/')
+      .get('https://backend-ekms.onrender.com/manual_news/get_post_twitter/')
       .then(function (response) {
         // Handle success
         //console.log(response);

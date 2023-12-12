@@ -11,7 +11,7 @@ function Livescore() {
     // console.log("Livescore")
     window.scrollTo(0, 0);    
       // axios.get('https://liveupcomingpro-production-f9ac.up.railway.app/cricinfo/Live_Interntonal/')
-      axios.get('http://127.0.0.1:8000/cricinfo/Live_Interntonal/')
+      axios.get('https://backend-ekms.onrender.com/cricinfo/Live_Interntonal/')
         .then(response => {
           //console.log(response.data);
           setScoreData(response.data);

@@ -33,7 +33,7 @@ function RegisterPage() {
         const validationErrors = validateFormData(formData);
         if (Object.keys(validationErrors).length === 0) {
 
-            axios.post("http://127.0.0.1:8000/role/register/", formData)
+            axios.post("https://backend-ekms.onrender.com/role/register/", formData)
                 .then((response) => {
                     //console.log(response);
                     if (response.status == 201) {

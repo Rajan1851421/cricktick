@@ -9,11 +9,11 @@ function ManualNewsGet() {
   const [error, setError] = useState(null); // Updated error state
   const [loading, setLoading] = useState(true);
   const [expandedIndex, setExpandedIndex] = useState(-1);
-  const [photourl, setPhotoUrl] = useState('http://127.0.0.1:8000/')
+  const [photourl, setPhotoUrl] = useState('https://backend-ekms.onrender.com/')
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axios.get('http://127.0.0.1:8000/manual_news/get_post_social/')
+    axios.get('https://backend-ekms.onrender.com/manual_news/get_post_social/')
       .then(function (response) {
         const newsData = response.data;
         const currentDate = new Date();
@@ -68,17 +68,14 @@ function ManualNewsGet() {
                   <div className='col-md-10 mb-3' key={index}>
                     <div className='card' id='AdminEmp'>
                       <div className='row g-0'>
+                        
                         <div className='col-md-4'>
                           <img
                             src={`${photourl}${item.upload_photo}`}
                             className='img-fluid rounded-start'
                             alt='Card'
                           /> <br/>
-                          <img
-                            src={`${photourl}${item.upload_video}`}
-                            className='img-fluid rounded-start'
-                            alt='Card'
-                          />
+                          <video className='img-fluid rounded h-100 w-100 mt-1' controls  src={`${photourl}${item.upload_video}`} type="video/mp4"></video>
                         </div>
                         <div className='col-md-8'>
                           <div className='card-body'>

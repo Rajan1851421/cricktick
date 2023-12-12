@@ -4,13 +4,13 @@ import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
 function FullNews() {
-    const [photourl, setPhotoUrl] = useState('http://127.0.0.1:8000/')
+    const [photourl, setPhotoUrl] = useState('https://backend-ekms.onrender.com/')
     const { id } = useParams()
     // console.log(id)
     const [news, setNews] = useState([])
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get(`http://127.0.0.1:8000/manual_news/get_put_patch_delete_socialByID/${id}`)
+        axios.get(`https://backend-ekms.onrender.com/manual_news/get_put_patch_delete_socialByID/${id}`)
             .then((response) => {
                 console.log(response);
                 setNews(response.data)
@@ -45,9 +45,10 @@ function FullNews() {
                                         </div>
                                         <div className="col-md-5  text-center">
                                             <div class="embed-responsive embed-responsive-4by3">
-                                                <iframe class="embed-responsive-item"  src={`${photourl}${news.upload_video}`}></iframe>
+                                            {/* <iframe className="embed-responsive-item" src={`${photourl}${news.upload_video}`} title="Video" allowFullScreen></iframe> */}
+                                            <video controls width="100%" height="100%" src={`${photourl}${news.upload_video}`} type="video/mp4"></video>
                                             </div>
-                                            {/* <video src={news.upload_video}></video> */}
+                                            
                                         </div>
                                     </div> <hr />
                                     <p class="card-text text-center" id='h1'>{news.description}</p>

@@ -10,7 +10,7 @@ function TweetEmbed() {
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
-      .get('http://127.0.0.1:8000/manual_news/get_post_twitter/')
+      .get('https://backend-ekms.onrender.com/manual_news/get_post_twitter/')
       .then(response => {
         //console.log(response);
         setTweetData(response.data);
@@ -30,7 +30,7 @@ function TweetEmbed() {
 
   return (
     <div className="container-fluid ">
-      <div className="container mt-5" style={{marginTop:'30px'}}>
+      <div className="container mt-5" style={{marginTop:'50px'}}>
         {loading ? (
           <center><p>Loading data...</p></center>
         ) : (

@@ -14,8 +14,8 @@ function Scorecard() {
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
-    // axios.get('http://127.0.0.1:8000/cricinfo/scorecard/')
-    axios.get('http://127.0.0.1:8000/cricinfo/scorecard/')
+    // axios.get('https://backend-ekms.onrender.com/cricinfo/scorecard/')
+    axios.get('https://backend-ekms.onrender.com/cricinfo/scorecard/')
       .then(response => {
         console.log(response.data);
         setScorecards(response.data);        
